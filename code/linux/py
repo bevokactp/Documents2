@@ -1,0 +1,16 @@
+
+pip install kivy pygame
+pip install bokeh seaborn plotly altair matplotlib
+pip install folium geopandas geoplotlib
+pip install lxml bs4
+pip install buildozer
+pip install mako jinja2
+pip install pillow
+pip install peewee sqlalchemy
+pip install shapely
+pip install django flask tornado fastapi requests scrapy
+pip install twisted aiohttp websockets graphene
+pip install cython pypy
+pip install ipdb virtualenv wheel setuptools ipython jupyter
+pip install pandas sympy numpy
+pip install psutil

@@ -1,0 +1,204 @@
+
+Зачинъ Выходъ
+    logout = sudo pkill -u wlysenko
+    hibernate = sudo pm-hibernate
+    reboot = shutdown -r now|+10
+    shutdown = shutdown -h now|+10
+    suspend = sudo pm-suspend
+Сведеньѧ
+    manager = hwinfo
+    Hardware system info = inxi
+    Hardware Lister = lshw
+    bios = sudo dmidecode | grep 'bios information' -a 30
+    utility for display temperature = sersors
+    userid = whoami
+    system information = uname -a
+    info distribute = lsb_release -a
+    all devices = blkid
+    wifi = iwconfig
+    enthernet = ifconfig
+Разделы
+    manipulation of partitions = fdisk -l
+    mount =  umount mkdir {/media/username/great = /media/username/windows} | mount /dev/sda2 /media/username/great | mount /dev/sda3 /media/username/windows
+Потоки
+    display a tree of processes = pstree
+    top processes = top
+    process tree using ps = ps -ejh
+    processes = ps aux
+    tree processes = ps axjf - tree
+    all processes = ps -a  ps -e
+    lookup process = pgrep chrome
+    all pids by name = pidof chrome
+    getting the pid of a process = pgrep nginx
+    fuser -k 8000/tcp
+    kill all associented processes = killall google-chrome
+    kill by name = pkill -9 ping
+Памѧть
+    status memory corrunt dir = df -ch --max-depth=1
+    status memory filesysytem = df -h
+    disk memory status = df -th
+    system memory status = free
+Приложеніѧ
+    all programs = ls /usr/share/applications
+    all installed packeges = sudo dpkg --get-selections | grep -w "install"
+    last installed = zgrep " installed " /var/log/dpkg.log*
+    explover = xdg-open . | gnome-open .
+    find packages be match = dpkg-query -l '*browser*'
+
+    open in browser = google-chrome "https://www.google.com/search?q=ива времѧ жизни"
+
+    update index of packages = sudo apt-get update
+    install updates (new ones) = sudo apt-get dist-upgrade
+    install only uninstalled = pip freeze | xargs pip uninstall -y
+    remove = sudo apt-get --purge remove appname
+    remove downloaded archive files = sudo clean
+Хранители
+    tar
+        archived = tar -cvf test.tar downloads
+        unarchived = tar -xvf test.tar
+        view archive = tar -tvf test.tar
+    gzip
+        create gzip compressed file = gzip (dir|file)name
+        uncompress gzip file = gzip -d *.gz
+        unzip all = unzip -x '*zip'
+        unzip package in directory = unzip package.zip -d directory_name
+    unrar = unrar x filename.rar [foldername]
+Выводъ
+    get random number = shuf -i 10-1{0} -n 1
+    reversed string text = echo 123 | rev
+    history commands = history
+    get list ppa = apt-cache policy | grep http | awk '{print $2" "$3}' | sort -u
+    вычисленіѧ
+        add=$(( 17 * 2 )); echo $add
+        expr 5 \* 3
+        cho '6 - 7 + 11 * 8 / 7 % 9' | bc
+        cho '6 - 7 + 11 * 8 / 7 % 9' | bc -
+Вложка
+    create nested directories = mkdir -p 1/2/3/4/5
+    recersive deleting = rm -r
+
+    find all empty directories = find  /path/to/dest -type d -empty the
+    largest dirs recursively = du -ah ./ | sort -n -r | head -n 20 list only
+    subfolder size`s sorted = du -h --max-depth=1 . | sort
+    dir names = ls -F . | grep \/$ Записи show dublicate files =
+    find . ! -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD show
+    files with long filename = find -type f -regextype egrep -regex ".*/[^./]
+    {75,}\.[^./]+$" list sort sum size dirs and files = du -hsx -- * |
+    sort -rh | head -20 the largest files recursively =
+    find . -printf '%s %p\n'| sort -nr | head -10 the largest files by
+    extension recursively = find . -type f -iname "*.txt" -printf '%s %p\n'|
+    sort -nr | head -10 find files by filename = "find -iname ""task1.py"""
+    find files by size = find ./ -xdev -type f -size +20m sort folder by size
+    reversed = du -h --max-depth=1 padymko/ | sort -h -r find all files by
+    extension = find . -type f -name "*.gif" find all empty files =
+    find ../padymko/ -type f -empty search files without extension =
+    find . -type f ! -name "*.*" find empty file and delete them =
+    find /path/to/dest -type f -empty -delete list last created files = find
+    $1 -type f -exec stat --format "%Y :%y %n" "{}" \; | sort -nr |
+    cut -d: -f2- | head show only filenames by regex = grep -irl "==" last
+    changed files = find ./ -type f -exec stat --format "%Y :%y %n" "{}" \; |
+    sort -nr | cut -d: -f2- | head ls print only names in directory =
+    find ./ -printf "%d\n" ls print only dirnames in directory =
+    find . -maxdepth 1 -type d -printf '%f\n' find files = locate test.py =
+    find . \( -name '*.py' -o -name '*.coffee' -o -name '*.scss' \) | xargs
+    wc -l = "find / -iname ""*.mp3"" -exec mv {} /mnt/mp3 \;" = find
+    sites_info/ -iname *xargs*html -exec google-chrome {} \; = find
+    sites_info/nanvel.name/ -iname *tto*nanvel*html -exec cp '{}' . \; = find
+    path_a -name '*aaa*' -exec mv -t path_b {} + = "find
+    path_a -name ""*aaa*"" -print0 | xargs -0 -i {} mv {} path_b"
+
+    create many files names = touch text{0001..0005}.txt
+    delete files by extension = find . -name "*.png" -type f -delete
+    rename files
+        shortname = rename 's/ - Google Search\[google\.com\]2021.08.01//' *
+        with replace ' ' on '_'
+            find . -type f -name "* *.jpg" -exec rename "s/\s/_/g" {} \;
+            for file in *; do mv "$file" `echo $file | tr ' ' '_'` ; done
+        to lowercase, "иі" "я" ',' '. ', '..', strip non-ascii letter
+            python3 -c "import os; [os.rename(dirpath+'/'+filename, (dirpath+'/')+filename.replace('я', 'ѧ').replace('ие', 'ѣ').replace('іе', 'ѣ').replace('..', '.').replace('. ', ' ').replace(', ', ' ').lower()) for dirpath, subdirs, files in os.walk(os.curdir) for filename in files]; [os.rename(dirpath, dirpath.lower().replace('ие', 'ѣ').replace('я', 'ѧ').replace('..', '.').replace('. ', ' ').replace(', ', ' ')) for dirpath, subdirs, files in os.walk(os.curdir) if dirpath != '.']"
+        all files only in current dir without
+            python3 -c "import os; import re; [os.rename(filename, (re.sub('[^0-9a-zA-ZА-Яа-яЁёІіЇїЙйѦѧѣ\.\,\-\_\ ]+', '', filename)).replace('  ', ' ').replace('_', ' ').strip().lower()) for filename in os.listdir()]"
+        all files only in nested dirs without non-ascii letter
+            for d in ./*/ ; do (cd "$d" && python3 -c "import os; import re; [os.rename(filename, (re.sub('[^0-9a-zA-ZА-Яа-яЁёІіЇїЙйѦѧѣ\.\,\-\_\ ]+', '', filename)).replace('  ', ' ').replace('_', ' ').strip().lower()) for filename in os.listdir()]" ); done
+    change text string content of files line
+        find . -type f -exec sed -i ':a;N;$!ba;s/іе/ѣ/g' {} +
+        find . -type f -exec sed -i ':a;N;$!ba;s/ие/ѣ/g' {} +
+        find . -type f -exec sed -i ':a;N;$!ba;s/ия/іѧ/g' {} +
+        find . -type f -exec sed -i ':a;N;$!ba;s/я/ѧ/g' {} +
+        find . -type f -exec sed -i ':a;N;$!ba;s/ ѧ / Ѧ /g' {} +
+        find . -type f -exec sed -i ':a;N;$!ba;s/Я/Ѧ/g' {} +
+    change text string content of files multiline replace
+        find . -type f -exec sed -i ':a;N;$!ba;s/\n\n(Триперстѣ Поклоны Благодарность)//g' {} +
+        find . -type f -exec sed -i ':a;N;$!ba;s/\n\n/\n/g' {} +
+
+Запись
+    unique lines in new file = uniq original.txt new.txt
+    show dublicate repeat lines = uniq -D самодѣлай.txt
+    change mode = chmod 777|666|555
+    output in file = >> command >> filename
+    print the last lines of file = tail
+    find text in files = grep -irn " text"
+    unique lines show = sort original.txt | uniq -u
+    enumerate lines in files = sed -n -e 57,65p a.txt | nl -s '. ' -w2  -n rn -v 1 -i 1
+    concate lines files one to one = paste -d" " secret2.py secret1.py
+    sort random lines in files = sort --random-sort secret1.py
+    sorting text in file = sort (sort -r) filename
+    viewing huge log files = less
+    differences between files = diff documents/being.py documents/task1.py
+
+jpeg png gif
+    convert jpeg image = gifconvert -verbose -coalesce filename.gif filename.jpeg
+    convert all png files to jpeg = mogrify -quality 75 -format jpg *.png
+    convert all png files to jpeg recursively = find . -name '*.png' -exec mogrify -format jpg {} +
+    convert png to jpeg = convert filename.png -quality 50 filename.jpg
+    resize compress jpeg = mogrify -quality 20 -resize 75% *.jpg
+pdf -> jpg
+    pdf to .jpg 1020*640 = pdftoppm вторичка.pdf вторичка -jpeg -rx 1020 -ry 640
+video audio
+    convert video to audio
+        ffmpeg -i input.wav -vn -ar 44100 -ac 2 -b:a 192k output.mp3
+        for i in *.mp4; do ffmpeg -i "$i" -vn -ar 44100 -ac 2 -b:a 192k  "${i%.*}.mp3"; done
+    increase a volume of video = ffmpeg -i *.mp3 -vcodec copy -af volume=20 o.mp3
+    decrease a volume of video = ffmpeg -i *.mp4 -vcodec copy -af "volume=-20db" o.mp4
+md -> html
+    .md to .html = pandoc -f markdown *.md > *.html
+
+    clean_lock = 
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+sudo dpkg --configure -a
+
+письмо поискъ regex
+    grep -irn "примула" ../предписанѣѧ\ scripts/ .
+    grep -irn "^[[:blank:]]*акт" поиск в начале строки
+    grep -irn "^    & " радѣї\ actions.txt
+    grep -irn "*$" радѣї\ actions.txt
+    grep -irn "=..\*"
+    grep -irn "=[12]"
+    grep -irn "cop[^1]"
+    print after match = grep -irn -a 2 "coz"
+    count found by files = grep -irnc "высот|стол"
+    find OR
+        OR
+            egrep -irn "высот|стол"
+            grep -irn ' высот\|столъ'
+            grep -irnE ' высот|столъ'
+            grep -inre 'выс' -e 'стол'
+        AND
+            grep -inrE 'выс' | grep -i 'стіл'
+
+youtube
+    delete clear all watch later videos = setInterval(function () {
+    document.querySelector('#primary button[aria-label="Action menu"]').click();
+    var things = document.evaluate(
+    '//span[contains(text(),"Remove from")]',
+    document,
+    null,
+    XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,
+    null
+    );
+    for (var i = 0; i < things.snapshotLength; i++) {
+    things.snapshotItem(i).click();
+    }
+    }, 1000);

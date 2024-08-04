@@ -1,0 +1,70 @@
+
+*.cekpetq
+
+# Operating system generated files
+.DS_Store
+Thumbs.db
+
+# Logs and output files
+logs/*.log
+*.log
+*.err
+
+# Build artifacts
+build/
+dist/
+*.jar
+*.war
+*.ear
+
+# IDE specific files
+.idea/
+*.iml
+*.suo
+*.cache
+.vscode/
+.cache/
+
+# Testing
+coverage/
+
+# python
+*.pyc
+*.pyo
+venv/
+env/
+/.venv
+__pycache__/
+site-packages/
+.eggs/
+*.egg-info/
+
+# Kivi-specific
+.build
+*.pyd
+
+# React Native
+android/app/build
+ios/build
+*.xcworkspace
+
+# Qt/GTK
+.pro
+.ui
+.qrc
+.moc
+
+# PlatformIO
+.pioenvs/
+.piolibdeps/
+.pio/build/
+
+# Node.js
+node_modules/
+npm-debug.log
+.npmrc
+.DS_Store # macOS specific
+
+# Blender
+*.blend1
+*.blend2

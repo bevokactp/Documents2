@@ -1,0 +1,31 @@
+/*
+
+mint21 x64 cinnamon g++
+
+reads url to youtube video from urls.txt, get info about video, display
+split to functions and invoke in main()
+
+/home/bk/Downloads/cpp/src/urls.txt contains
+https://www.youtube.com/watch?v=qjEjHuOU3tw&t=9s&ab_channel=WorldofWarcraftRU
+https://www.youtube.com/watch?v=E3htJ1mEOM8&ab_channel=LudmilaKonstantinova
+https://www.youtube.com/watch?v=Hf9aLnISOeM&ab_channel=%D0%AD%2B%D0%9C
+https://www.youtube.com/watch?v=C5YaJqjF1Es&ab_channel=%D0%92%D0%90%D0%9B%D0%95%D0%A0%D0%98%D0%99%D0%A1%D0%81%D0%9C%D0%98%D0%9D
+https://www.youtube.com/watch?v=UOQtrWLmOpI&ab_channel=%D0%92%D1%8F%D1%87%D0%B5%D1%81%D0%BB%D0%B0%D0%B2%D0%9B%D0%B5%D0%BA%D1%81%D0%B8%D0%BD
+
+get information about each videos formats ( mp4 mp3 m4 ) and sizes for download after select our choice
+print for each video it info as (format = size mb)
+
+*/
+
+#include <iostream>
+
+#include "functions.h"
+
+using namespace std;
+
+
+int main()
+{
+    add2(1, 2);
+    return 0;
+}

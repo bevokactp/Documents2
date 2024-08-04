@@ -1,0 +1,33 @@
+
+Arduino Nano V3 ATmega328P-AU нераспаянная = https://arduino.ua/ru/prod2177-arduino-nano-v3-0-avr-atmega328-p-20au
+
+Модуль RGB светодиода KY-016 для Arduino = https://arduino.ua/ru/prod2966-modyl-rgb-svetodioda-ky-016-dlya-arduino
+
+Переключатель зеленый KCD1, SPST (ON-OFF), 250В/6А = https://arduino.ua/ru/prod5436-vimikach-kcd1-106-2p-klavishnii-mini-zelenii
+Переключатель синий KCD1, SPST (ON-OFF), 250В/6А = https://arduino.ua/ru/prod5436-vimikach-kcd1-106-2p-klavishnii-mini-zelenii
+Кнопка PBS-33B без фиксации OFF-(ON) ГОЛУБАЯ = https://arduino.ua/ru/prod3931-knopka-pbs-33b-bez-fiksacii-off-on-golybaya
+
+Пара двухконтактных разъемов JST SYP с проводами (мама-папа) = https://arduino.ua/ru/prod1290-para-dvyhkontaktnih-razemov-jst-syp-s-provodami = 2 еденицы
+JST-SM-Connector = http://www.kosmodrom.com.ua/el.php?name=JST-SM-Connector
+
+Линейный мотор, шток 30мм, скорость 4мм/с (LA-WR-12DC 30mm/4mm/s) = https://vseplus.com/product/linejnyj-motor-stok-30mm-skorost-250851
+Мини мотор с редуктором 12VDC, 400 об/мин (12GAN20-50-400rpm-6-12VDC) = https://vseplus.com/product/mini-motor-s-reduktorom-12vdc-193275 = 2 еденицы 
+
+Модуль реле 5В 10А с опторазвязкой (low level) = https://arduino.ua/ru/prod202-modyl-rele-5v-10a-s-optorazvyazkoi = 4 еденицы
+Модуль мощного реле 5В 30А с опторазвязкой = https://arduino.ua/ru/prod1767-1-channel-5v-30a-high-power-relay-module-for-arduino
+Модуль реле 5В 10А низкого уровня (low level) = https://arduino.ua/ru/prod1706-modyl-rele-5v-10a-nizkogo-yrovnya-low-level
+
+Блок питания RD-50A = https://vseplus.com/product/blok-pitania-rd-50a-276316
+
+регулятор натяжения нити для промышленных оверлоков juki, siruba = https://sewing-navigator.com.ua/regulyator-natyazheniya-niti-dlya-promyshlennyh-overlokov-juki = 2 еденицы 
+игла швейная цыганская royal 6" 150mm = https://sewing-navigator.com.ua/igly-perepletnye-royal-6-150-mm = 2 еденицы 
+
+вилка на 220 вольт
+провод на вилку
+
+провода монтажные
+Шнур DYNEESI Pro 1000 м 0.10mm-8.0kg 1000m = https://prom.ua/p2123253225-shnur-dyneesi-pro.html = 2 еденицы
+
+Потребление
+	1.2 а ac * 220v = 26 w += 30 w
+	0.5 а dc

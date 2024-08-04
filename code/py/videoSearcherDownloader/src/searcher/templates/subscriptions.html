@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your YouTube Subscriptions</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .channels,
+      .videos {
+        width: 48%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Your YouTube Subscriptions</h1>
+    <div class="container">
+      <div class="channels">
+        <h2>Channels</h2>
+        <ul>
+          {% for subscription in subscriptions %}
+          <li>{{ subscription.snippet.title }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="videos">
+        <h2>Videos from Subscriptions</h2>
+        <ul>
+          {% for subscription in subscriptions %} {% for video in
+          subscription.snippet.latestVideos %}
+          <li>
+            <strong>Video Name:</strong> {{ video.snippet.title }}<br />
+            <strong>Channel:</strong> {{ subscription.snippet.title }}<br />
+            <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}"
+              >Watch Video</a
+            >
+          </li>
+          {% endfor %} {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+  </body>
+</html>

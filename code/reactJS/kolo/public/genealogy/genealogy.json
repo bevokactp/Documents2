@@ -1,0 +1,394 @@
+{
+  "marriages": [
+    {
+      "ids": [
+        1,
+        2
+      ],
+      "from": "2011-01-01"
+    },
+    {
+      "ids": [
+        9,
+        10
+      ],
+      "from": "2009-11-25"
+    },
+    {
+      "ids": [
+        12,
+        13
+      ],
+      "from": "1900-09-14"
+    }
+  ],
+  "people": {
+    "1": {
+      "name": "John",
+      "surname": "Doe",
+      "patronymic": "Williamovich",
+      "gender": "м",
+      "date_of_birth": "1996-11-09",
+      "father_id": 9,
+      "mother_id": 10,
+      "residences": [
+        {
+          "place": "New York",
+          "from": "1980-01-01",
+          "to": "1990-01-01"
+        },
+        {
+          "place": "Los Angeles",
+          "from": "1990-01-01",
+          "to": "2000-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Engineer",
+          "from": "1985-01-01",
+          "to": "1995-01-01"
+        },
+        {
+          "occupation": "Manager",
+          "from": "1995-01-01",
+          "to": "2010-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": null,
+      "place_of_death": null,
+      "cause_of_death": null,
+      "note": null
+    },
+    "3": {
+      "name": "Alice",
+      "surname": "Doe",
+      "patronymic": "Johnovna",
+      "gender": "ж",
+      "date_of_birth": "2011-01-01",
+      "father_id": 1,
+      "mother_id": 2,
+      "residences": [
+        {
+          "place": "Los Angeles",
+          "from": "2000-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Artist",
+          "from": "2020-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": null,
+      "place_of_death": null,
+      "cause_of_death": null,
+      "note": null
+    },
+    "4": {
+      "name": "Bob",
+      "surname": "Doe",
+      "patronymic": "Johnovich",
+      "gender": "м",
+      "date_of_birth": "2001-01-01",
+      "father_id": 1,
+      "mother_id": 2,
+      "residences": [
+        {
+          "place": "San Francisco",
+          "from": "2005-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Doctor",
+          "from": "2010-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": null,
+      "place_of_death": null,
+      "cause_of_death": null,
+      "note": null
+    },
+    "5": {
+      "name": "Carol",
+      "surname": "Doe",
+      "patronymic": "Johnovna",
+      "gender": "ж",
+      "date_of_birth": "1990-11-01",
+      "father_id": 1,
+      "mother_id": 2,
+      "residences": [
+        {
+          "place": "Chicago",
+          "from": "2010-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Scientist",
+          "from": "2015-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": null,
+      "place_of_death": null,
+      "cause_of_death": null,
+      "note": null
+    },
+    "2": {
+      "name": "Jane",
+      "surname": "Smith",
+      "patronymic": "Robertovna",
+      "gender": "ж",
+      "date_of_birth": "2023-07-14",
+      "father_id": 6,
+      "mother_id": 7,
+      "residences": [
+        {
+          "place": "New York",
+          "from": "1980-01-01",
+          "to": "1990-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Teacher",
+          "from": "1995-01-01",
+          "to": "2024-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": null,
+      "place_of_death": null,
+      "cause_of_death": null,
+      "note": null
+    },
+    "8": {
+      "name": "William",
+      "surname": "Doe",
+      "patronymic": "Ivanovich",
+      "gender": "м",
+      "date_of_birth": "2017-01-01",
+      "father_id": 9,
+      "mother_id": 10,
+      "residences": [
+        {
+          "place": "Boston",
+          "from": "1950-01-01",
+          "to": "2000-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Professor",
+          "from": "1975-01-01",
+          "to": "2000-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": null,
+      "place_of_death": null,
+      "cause_of_death": null,
+      "note": null
+    },
+    "11": {
+      "name": "Mary",
+      "surname": "Doe",
+      "patronymic": "Ivanovna",
+      "gender": "ж",
+      "date_of_birth": "1991-01-01",
+      "father_id": 12,
+      "mother_id": 13,
+      "residences": [
+        {
+          "place": "Philadelphia",
+          "from": "1955-01-01",
+          "to": "2000-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Nurse",
+          "from": "1980-01-01",
+          "to": "2000-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": "2021-06-01",
+      "place_of_death": "Iraq",
+      "cause_of_death": "War"
+    },
+    "9": {
+      "name": "John",
+      "surname": "Doe",
+      "patronymic": "Mikhailovich",
+      "gender": "м",
+      "date_of_birth": "1900-01-01",
+      "father_id": null,
+      "mother_id": 11,
+      "residences": [
+        {
+          "place": "Chicago",
+          "from": "1920-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Engineer",
+          "from": "1945-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": "2024-01-01",
+      "place_of_death": "Los Angeles",
+      "cause_of_death": "Natural Causes"
+    },
+    "10": {
+      "name": "Anna",
+      "surname": "Doe",
+      "patronymic": "Mikhailovna",
+      "gender": "ж",
+      "date_of_birth": "1954-01-01",
+      "father_id": null,
+      "mother_id": null,
+      "residences": [
+        {
+          "place": "New York",
+          "from": "1925-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Homemaker",
+          "from": "1945-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": "1995-11-01",
+      "place_of_death": "Mars",
+      "cause_of_death": "Flying"
+    },
+    "12": {
+      "name": "Robert",
+      "surname": "Smith",
+      "patronymic": "Ivanovich",
+      "gender": "м",
+      "date_of_birth": "2001-01-01",
+      "father_id": null,
+      "mother_id": null,
+      "residences": [
+        {
+          "place": "Los Angeles",
+          "from": "1920-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Lawyer",
+          "from": "1945-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": "2024-01-01",
+      "place_of_death": "Los Angeles",
+      "cause_of_death": "Natural Causes"
+    },
+    "13": {
+      "name": "Elizabeth",
+      "surname": "Smith",
+      "patronymic": "Ivanovna",
+      "gender": "ж",
+      "date_of_birth": "1999-01-01",
+      "father_id": null,
+      "mother_id": null,
+      "residences": [
+        {
+          "place": "San Francisco",
+          "from": "1925-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Teacher",
+          "from": "1945-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": "2024-01-01",
+      "place_of_death": "Los Angeles",
+      "cause_of_death": "Natural Causes"
+    },
+    "6": {
+      "name": "Didi",
+      "surname": "Dol",
+      "patronymic": "Ivanovi",
+      "gender": "м",
+      "date_of_birth": "2001-01-01",
+      "father_id": null,
+      "mother_id": 11,
+      "residences": [
+        {
+          "place": "San Francisco",
+          "from": "1925-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Teacher",
+          "from": "1945-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "religion": "Christianity",
+      "date_of_death": "2024-01-01",
+      "place_of_death": "Los Angeles",
+      "cause_of_death": "Natural Causes"
+    },
+    "7": {
+      "name": "Дуся",
+      "surname": "Сема",
+      "patronymic": "Оировична",
+      "gender": "ж",
+      "date_of_birth": "2001-01-01",
+      "father_id": null,
+      "mother_id": null,
+      "residences": [
+        {
+          "place": "Умань",
+          "from": "1925-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "occupations": [
+        {
+          "occupation": "Актор",
+          "from": "1945-01-01",
+          "to": "1980-01-01"
+        }
+      ],
+      "religion": "Древлеправославие",
+      "date_of_death": "2024-01-01",
+      "place_of_death": "Los Angeles",
+      "cause_of_death": "Natural Causes"
+    }
+  }
+}

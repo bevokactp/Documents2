@@ -1,0 +1,8 @@
+
+npm install react-native
+npm install charts d3 echarts googlecharts highcharts
+npm install three babylon
+npm install react jquery express socket.io
+npm install leaflet
+npm install jshint grunt babel fs-extra moment glob
+npm install chalk debug commander

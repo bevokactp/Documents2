@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Media Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="player-container">
+        <div class="controls">
+            <button id="play">Play</button>
+            <button id="stop">Stop</button>
+            <button id="pause">Pause</button>
+            <button id="prev">Previous</button>
+            <button id="next">Next</button>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+            <input type="range" id="time-slider" min="0" max="100" value="0">
+            <div id="time-info">00:00 / 00:00</div>
+        </div>
+        <div class="playlist">
+            <h2>Playlist</h2>
+            <ul id="playlist-items"></ul>
+        </div>
+        <input type="file" id="file-upload" multiple>
+        <button id="save-playlist">Save Playlist</button>
+        <button id="load-playlist">Load Playlist</button>
+    </div>
+    <audio id="audio-player" controls></audio>
+    <script src="script.js"></script>
+</body>
+</html>

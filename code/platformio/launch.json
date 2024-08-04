@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "PlatformIO Debug",
+            "type": "platformio-debug",
+            "request": "launch",
+            "configuration": "native",
+            "program": "${workspaceFolder}/.pio/build/native/program",  // Adjust the path as needed
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "PlatformIO: Build",
+            "postDebugTask": "PlatformIO: Clean",
+            "internalConsoleOptions": "openOnSessionStart"
+        }
+    ]
+}

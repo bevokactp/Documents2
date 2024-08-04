@@ -1,0 +1,16 @@
+.filter-dropdown {
+	display: inline-block;
+	position: relative;
+  }
+
+  .filter-options {
+	display: none;
+	position: absolute;
+	background: white;
+	border: 1px solid #ccc;
+	z-index: 1;
+  }
+
+  .filter-dropdown:hover .filter-options {
+	display: block;
+  }

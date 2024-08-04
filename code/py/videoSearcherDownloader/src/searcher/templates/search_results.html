@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Results</title>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+    <ul>
+      {% for video in results %}
+      <li>
+        <strong>Video Name:</strong> {{ video.snippet.title }}<br />
+        <strong>Channel:</strong> {{ video.snippet.channelTitle }}<br />
+        <strong>Date of Publication:</strong> {{ video.snippet.publishedAt }}<br />
+        <strong>Time from Date of Publication:</strong> {{ (current_time -
+        video.snippet.publishedAt).days }} days<br />
+        <strong>Duration:</strong> {{ video.contentDetails.duration if
+        video.contentDetails else 'N/A' }}<br />
+        <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}"
+          >Watch Video</a
+        >
+      </li>
+      {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+  </body>
+</html>

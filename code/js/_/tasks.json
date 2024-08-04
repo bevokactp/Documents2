@@ -1,0 +1,18 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "test",
+            "problemMatcher": "$jest-watch",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "label": "Run Jest Tests",
+            "runOptions": {
+                "cwd": "${workspaceFolder}"
+            }
+        }
+    ]
+}

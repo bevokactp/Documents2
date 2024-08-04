@@ -1,0 +1,15 @@
+
+// who has children determinate by father mother
+[
+    {
+      "id": null,
+      "name": "",
+      "birth_datetime": null,
+      "death_datetime": null,
+      "father_id": null,
+      "mother_id": null,
+      "spouses_ids": [],
+      "dinasty": "",
+      "species": ""
+    }
+]

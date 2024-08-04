@@ -1,0 +1,13 @@
+
+# comments
+
+strucTypetName  KEYWORD1
+classTypeName  KEYWORD1
+typeName  KEYWORD1
+
+method1  KEYWORD2
+method2  KEYWORD2
+method3  KEYWORD2
+
+constName1 LITERAL1
+constName2 LITERAL1

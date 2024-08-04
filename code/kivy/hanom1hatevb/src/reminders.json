@@ -1,0 +1,20 @@
+{
+	"1": {
+		"name": "1",
+		"start_time": "12:30",
+		"interval": "01:00",
+		"activated": true
+	},
+	"2": {
+		"name": "1",
+		"start_time": "12:30",
+		"interval": "01:00",
+		"activated": true
+	},
+	"3": {
+		"name": "1",
+		"start_time": "12:30",
+		"interval": "01:00",
+		"activated": true
+	}
+}

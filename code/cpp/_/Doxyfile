@@ -1,0 +1,9 @@
+PROJECT_NAME = "Your Project Name"
+PROJECT_NUMBER = 0.0.1
+OUTPUT_DIRECTORY = docs
+SOURCE_BROWSER = YES
+INPUT = "src"
+RECURSIVE = YES
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+BRIEF = "A brief description of your C++ project"

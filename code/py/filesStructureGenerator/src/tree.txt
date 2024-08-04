@@ -1,0 +1,16 @@
+youtube-search-project/
+├── youtube_search.py
+├── config.py
+├── index.html
+├── styles.css
+├── app/
+│   ├── __init__.py
+│   ├── static/
+│   │   ├── css/
+│   │   └── js/
+│   ├── templates/
+│   │   └── index.html
+│   └── views.py
+├── script.js
+├── requirements.txt
+└── run.py

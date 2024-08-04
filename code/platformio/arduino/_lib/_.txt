@@ -1,0 +1,309 @@
+
+// type func(const void * StructOrArray){
+// const myStruct * thisStruct = (const myStruct *) StructOrArray; }
+//  const int * Array = (const int *) StructOrArray;
+// func(&StructOrArray)
+// template‹class T› int getSecond(T* tempStruct) {
+// template‹class T› int getSecond(T& tempStruct) {
+
+
+
++ #define - global var
+для хранения констант в стиле номеров пинов, каких-то настроек и постоянных значений
+
+#ifdef debug_enable
+#define debug(x) serial.println(x)
+#else
+#define debug(x)
+#endif
+
+__function__
+__date__ __time__
+__file__ __base_file__
+__line__
+__counter__
+
+#define long_unique_name value
+
+#define macro\
+  do { \
+    code... \
+    code... \
+  } while (0)
+
+// instead of define use const or enum 
+// enum listmodes
+enum {set1 = 1, set2, set3, set4, set5} settings;
+
+// описание и шаблонные функций в заголовчных
+// наполнение функций в срр
+
+#include <библиотека>
+
+const
+variables
+
+classes
+struct
+
+Watchdog interrupt/sleep/reset
+power 20 ma on pin
+
+
+void setup() {
+  pin digit
+  pin analog
+  pin pwm
+
+  read_config();
+
+  class
+  + millis - delay
+  enum class
+  threads
+  + static / local in parametr of function - global 
+  + cstring - string
+  + struct for similar variables for избегать фрагментации выделения памяти
+  + counter - for do while do 
+  minimal size datatypes без переполнения
+  + & или если не const data тогда применить * - variables
+  + new() reused a same memory after delete() - static
+ unique_ptr<Cls> cls(new Cls(*args))
+  + union single memory for diffent types
+  + (float)(*int n-pa3) - float  
+  progmem для хранения больших объемов постоянных данных (массив битмапов для вывода на дисплеи, строки с текстом, “таблицы” синуса
+  *float - / = +  val * 0.1 - val / 10 
+  + *-pow() 
+  заменить сдвиг указателем. сдвиги можно заменить на доступ к байтам переменной по указателю, и уже оттуда их читать и писать (равноценный пример
+  предварительно вычислять то, что можно вычислить
+  + умножение/деление unsigned int кратного 2 на степень двойки 2^n битовым сдвигом = val / 8 == val (<< или >>) 3
+  + остаток от деления на 2^n битовой маской
+  for int - деление + умножением = a / b == a * (1 / b) == (a * x) >> n
+  for (int &var:vars)
+  Serial.println(F("Type /help to help"));
+  - Serial
+  enum class enum_name {....}}
+  + switch case for unsigned int
+  + switch case for ranges 0 ... 100
+  + const или #define при передаче их в качестве аргументов в функции. делать константами всё, что не будет меняться
+  free() delete() в обратном порядке от её выделения memory, чтобы избежать образования пустых мест фрагментации
+}
+void loop() {
+  void loop() {
+    for (;;) {
+      effects();
+      buttonsclicks();
+      прерывания();
+      sensorread();
+
+      serial.println(memoryfree()); // печать количества свободной sram
+      delay(1000);
+      
+
+        free() delete() в обратном порядке от её выделения, чтобы избежать образования пустых мест фрагментации
+    }
+}
+
+inline __attribute__ ((always_inline)) {}
+
+void yield() {}
+
+static void fundtion(int num, ...) {}
+
+void sensorread() {
+  static int var;
+  // конструкция таймера
+  // опрос датчика
+  // фильтрация значений
+}
+
+
+void myfunc() {
+  serial.println(__func__); // выведет myfunc
+  serial.println(__func__); // выведет myfunc
+
+}
+
+
+timer tmr1(1000);
+timer tmr2;
+void setup() {
+  serial.begin(9600);
+  tmr2.start(2000);
+}
+void loop() {
+  if (tmr1.ready()) serial.println("timer 1!");
+  if (tmr2.ready()) serial.println("timer 2!");
+}
+
+class timer {
+  public:
+    timer () {}
+    timer (uint32_t nprd) {
+      start(nprd);
+    }
+    void start(uint32_t nprd) {
+      prd = nprd;
+      start();
+    }
+    void start() {
+      tmr = millis();
+      if (!tmr) tmr = 1;
+    }
+    void stop() {
+      tmr = 0;
+    }
+    bool ready() {
+      if (tmr && millis() - tmr >= prd) {
+        start();
+        return 1;
+      }
+      return 0;
+    }
+
+  private:
+    uint32_t tmr = 0, prd = 0;
+};
+
+
+
+#include <liquidcrystal_i2c.h>
+liquidcrystal_i2c lcd(0x27, 16, 2);
+
+#define zoomer_pin 5
+
+// многоцвету нужны шим порты
+#define red_pin 6
+#define green_pin 5
+#define blue_pin 3
+
+void setup() {
+  pinmode(red_pin, output);
+  pinmode(green_pin, output);
+  pinmode(blue_pin, output);
+
+  pinmode(zoomer_pin, output);
+
+  pinmode(a0, input);
+  pinmode(13, output);
+  pinmode(3, output);
+  digitalwrite(3, 1);
+
+  serial.begin(9600);
+  serial.settimeout(50);
+
+
+  lcd.init();       // initialization display
+  lcd.backlight();  // включить подсветку
+
+}
+
+void loop() {
+  if (serial.available()) {
+    int val = serial.parseint();
+
+    serial.println(val);
+  }
+}
+
+void yield() {
+}
+
+void random_seed() {
+  uint32_t seed = 0;
+  for (int i = 0; i < 16; i++) {
+    seed *= 4;
+    seed += analogread(a0) & 3;
+    randomseed(seed);
+  }
+}
+
+void show_text_ready() {
+
+  // строки для вывода
+  char s1[] = "i am";
+  char s2[] = "ready!";
+
+  lcd.setcursor(1, 0);
+  for (int i = 0; i < strlen(s1); i++) {
+    lcd.print(s1[i]);
+    delay(100);
+  }
+
+  lcd.setcursor(4, 1);
+  for (int i = 0; i < strlen(s2); i++) {
+    lcd.print(s2[i]);
+    delay(100);
+  }
+
+  delay(2000);
+}
+
+void show_text_finish() {
+}
+
+void show_text_interrupt() {
+}
+
+void show_text_worktime_and_progressbar() {
+  delay(1000);
+  static int count = 0;
+  count++;
+
+  // очищаем и выводим текст и значение
+  lcd.home();
+  lcd.clear();
+  lcd.print("time working: ");
+  lcd.print(count);
+}
+
+void highlight_rgb() {
+  digitalwrite(red_pin, 1);
+  delay(2000);
+  digitalwrite(red_pin, 0);
+  digitalwrite(green_pin, 1);
+  delay(2000);
+  digitalwrite(green_pin, 0);
+  digitalwrite(blue_pin, 1);
+  delay(2000);
+  digitalwrite(blue_pin, 0);
+}
+
+void sound_finish() {
+  digitalwrite(8, 1);
+  delay(100);
+  digitalwrite(8, 0);
+  delay(100);
+}
+
+void string_concat(){
+  string str;
+  int value = 1;
+  str.reserve(30);
+  str += f("hello");
+  str += value;
+  str += 1234;
+  str += f(", ");
+  str += 3.14;
+}
+
+
+extern int __bss_end;
+extern void *__brkval;
+// функция, возвращающая количество свободного озу
+int memoryfree() {
+  int freevalue;
+  if ((int)__brkval == 0)
+    freevalue = ((int)&freevalue) - ((int)&__bss_end);
+  else
+    freevalue = ((int)&freevalue) - ((int)__brkval);
+  return freevalue;
+}
+
+// бегущее среднее
+float k = 0.1;  // коэффициент фильтрации, 0.0-1.0
+float expRunningAverage(float newVal) {
+  static float filVal = 0;
+  filVal += (newVal - filVal) * k;
+  return filVal;
+}
