@@ -31,7 +31,7 @@ import SoundPage from './components/Sound/components/SoundPage';
 // строительство гаяметрія куд хата хутор
 // Litos камни рельеф истоники жилы ово
 // Plants мотъ батискаф батисфера
-// Reincarnation
+// Reincarnation год+месяц стихія 1 3 9 40 писанка
 // Перстень'; Поручи Ожерелье
 // веники
 // триптих Ckladen чаша кубок тарель мис треножник
@@ -47,6 +47,7 @@ import SoundPage from './components/Sound/components/SoundPage';
 // таьлица болотова'; плавнение* кипение* замерзание вес агрератное состояние
 // Металы';
 // Зеркала
+// камни ягла
 // PhiloStone
 // ElectoMontage
 // Electronic
