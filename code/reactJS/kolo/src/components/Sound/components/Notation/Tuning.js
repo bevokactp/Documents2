@@ -2,7 +2,7 @@
 // Равномерно темперированный строй
 
 // Функция для реализации пифагорейского строя
-export function pythagoreanTuning(baseFrequency = 438) {
+export function pythagoreanTuning(baseFrequency = 432) {
 	// Формулы для пифагорейского строя:
 	// Чистая квинта: частота * (3/2)
 	// Чистая кварта: частота * (4/3)
@@ -11,7 +11,7 @@ export function pythagoreanTuning(baseFrequency = 438) {
   }
 
   // Функция для равномерно темперированного строя
-  export function equalTemperamentTuning(baseFrequency = 438) {
+  export function equalTemperamentTuning(baseFrequency = 432) {
 	// Формулы для равномерно темперированного строя:
 	// Каждая нота выше предыдущей на 2^(1/12)
 	const ratio = Math.pow(2, 1/12);

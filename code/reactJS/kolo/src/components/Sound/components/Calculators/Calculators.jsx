@@ -71,7 +71,7 @@ const SoundComponents = () => {
                 <label>Полутона: <input type="number" value={semitones} onChange={handleSemitonesChange} /></label>
                 <br />
                 <p>Результат частоты (с учетом полутона): <span style={{ color: 'blue' }}>{frequencyResult.toFixed(2)} Гц</span></p>
-                <p>Адаптированная частота к 438 Гц: <span style={{ color: 'blue' }}>{adaptedFrequency.toFixed(2)} Гц</span></p>
+                <p>Адаптированная частота к 428 Гц: <span style={{ color: 'blue' }}>{adaptedFrequency.toFixed(2)} Гц</span></p>
                 <hr />
             </div>
 

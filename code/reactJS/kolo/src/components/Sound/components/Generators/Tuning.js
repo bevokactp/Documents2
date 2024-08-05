@@ -17,11 +17,11 @@ export function generateTone(frequency, sampleRate, length) {
   }
 
   /**
-   * Генерирует настройку частоты 438 Гц.
+   * Генерирует настройку частоты 432 Гц.
    * @param {number} sampleRate - Частота дискретизации в Гц.
    * @param {number} length - Длина сигнала в миллисекундах.
    * @returns {Float32Array} Массив значений звукового сигнала.
    */
-  export function generateTuning438Hz(sampleRate, length) {
-	return generateTone(438, sampleRate, length);
+  export function generateTuning432Hz(sampleRate, length) {
+	return generateTone(432, sampleRate, length);
   }

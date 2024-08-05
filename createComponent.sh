@@ -10,37 +10,22 @@ COMPONENT_NAME=$1
 COMPONENT_DIR="Мы 11 Да 8 Май/$COMPONENT_NAME"
 
 # Создаем папки
-mkdir -p "$COMPONENT_DIR/assets"
 mkdir -p "$COMPONENT_DIR/__tests__"
 mkdir -p "$COMPONENT_DIR/components"
 mkdir -p "$COMPONENT_DIR/contexts"
+mkdir -p "$COMPONENT_DIR/draw"
 mkdir -p "$COMPONENT_DIR/hooks"
 mkdir -p "$COMPONENT_DIR/services"
 mkdir -p "$COMPONENT_DIR/styles"
 
 # Создаем файлы и добавляем шаблоны
-cat <<EOL > "$COMPONENT_DIR/components/$COMPONENT_NAME.jsx"
+cat <<EOL > "$COMPONENT_DIR/${COMPONENT_NAME}Page.jsx"
 import React from 'react';
-import '../styles/${COMPONENT_NAME}.css';
-
-export default function ${COMPONENT_NAME}() {
-  return (
-    <div className="${COMPONENT_NAME}">
-      <p>Мы 11 Да 8 Май ${COMPONENT_NAME}</p>
-    </div>
-  );
-};
-EOL
-
-cat <<EOL > "$COMPONENT_DIR/components/${COMPONENT_NAME}Page.jsx"
-import React from 'react';
-import ${COMPONENT_NAME} from './${COMPONENT_NAME}';
 
 export default function ${COMPONENT_NAME}Page() {
   return (
     <div>
       <h1>${COMPONENT_NAME} Page</h1>
-      <${COMPONENT_NAME} />
     </div>
   );
 };

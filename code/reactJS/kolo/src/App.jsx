@@ -1,47 +1,85 @@
 import React from "react";
 
-// import Location from "./components/Location";
+// import Mu11Da108May from "./components/Location";
 
-// import ReverseAnalogClock from "./components/Datetime/ClockReverseAnalog";
-// import DatetimeGregorian from "./components/Datetime/DatetimeGregorian";
-// import DatetimeRealNow from "./components/Datetime/DatetimeRealNow";
-// import Holidays from "./components/Datetime/Holidays";
-// import DatetimeConvert from "./components/Datetime/DatetimeConvert";
+// import Mu11Da108May from "./components/Datetime/ClockReverseAnalog";
+// import Mu11Da108May from "./components/Datetime/DatetimeGregorian";
+// import Mu11Da108May from "./components/Datetime/DatetimeReal";
+// import Mu11Da108May from "./components/Datetime/Holidays";
+// import Mu11Da108May from "./components/Datetime/DatetimeConvert";
 
-// import Kolo from "./components/Kolo/Kolo";
+// import Mu11Da108May from "./components/Kolo/Kolo";
 
-// import NamesCalculator from "./components/NamesCalculator/NamesCalculator";
-// import Genealogy from "./components/Genealogy/Genealogy";
-// import Mitpik from "./components/Mitpik/Mitpik";
+// import Mu11Da108May from "./components/Names/Names";
+// import Mu11Da108May from "./components/Genealogy/Genealogy";
+// import Mu11Da108May from "./components/Mitpik/Mitpik";
 
-// import Pasha from "./components/Pasha/Pasha"; сад муж - триклитон
+// import Mu11Da108May from "./components/Pasha/Pasha"; сад муж - триклитон
 
-// import PlatonicMetki from "./components/Metki/PlatonicMetki";
-// import StarMetki from "./components/Metki/StarMetki";
-// import Composition from "./components/Metki/Composition";
+// import Mu11Da108May from "./components/Metki/PlatonicMetki";
+// import Mu11Da108May from "./components/Metki/StarMetki";
+// import Mu11Da108May from "./components/Metki/Composition";
 
-// import Xvam1domari9 from './components/Xvam1domari9/Xvam1domari9';
+// import Mu11Da108May from './components/Xvam1domari9/Xvam1domari9';
 
-import SoundPage from './components/Sound/components/SoundPage';
+// import Mu11Da108May from './components/Sound/components/SoundPage';
 
-// фигуры хладни лихтенберга лисажу всеясветная узлы стихи вирши ямб хорей дактиль
-// угольники лучевики мандары звёзды generateImageSymetry арконтан
-// письмо
+// import Mu11Da108May from './components/Noe3i9/components/Noe3i9Page';
+// import Mu11Da108May from './components/N1cbmo/N1cbmoPage';
+import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
+
+// функции что генерирую буквы
+// Буква 1: Один полукруг с горизонтальной линией по середине.
+// Буква 2: Пересечение двух одинаковых кругов на 1/4 диаметра.
+// Буква 3: Пересечение трех вертикальных линий через два круга.
+// Буква 4: Пересечение трех горизонтальных линий через два круга.
+// Буква 5: Пересечение двух вертикальных линий через два круга.
+// Буква 6: Пересечение одной вертикальных линий через два круга.
+// Буква 7: Пересечение трех вертикальных линий через один круг.
+// Буква 8: Пересечение трех кругов.
+// Буква 9: Пересечение двух линий под 90.
+// Буква 10: Пересечение двух линий под 45.
+// Буква 11: Пересечение двух линий под 90 с отступом 45.
+// Буква 12: Пересечение линии и круга.
+
+
+// мандары
+// generateImageSymetry
+// арконтан
+
 // свадьба
+// рождения кварзна тризна
+// імянаречение
+
+// Reincarnation простое=год+месяц стихії2богов 1 3 9 40 писанка лохань тризна разна Всенощная Рангжир рангфир рангхир Высчитали
+// посмертно
+// Имя по дате
+// Стихия по жизни
+// Место обитания
+// 3  8 9 м
+// 10 8 9 ж
+// Разна 40 панихида
+// Оклички
+
+// Рангжир рангфир рангхир
+
+
 // строительство гаяметрія куд хата хутор
+
 // Litos камни рельеф истоники жилы ово
+
 // Plants мотъ батискаф батисфера
-// Reincarnation год+месяц стихія 1 3 9 40 писанка
+// терра прета
+
 // Перстень'; Поручи Ожерелье
 // веники
-// триптих Ckladen чаша кубок тарель мис треножник
+// триптих складень чаша кубок тарель мис треножник
 // трещётки
 // кулинария
-// корзины постель круглая бочь
+// корзины бочь кругло(стол постель)
 // Правитація Славитація дары
 // диспиплины
 // принципы заповеди стремительство
-// терра прета
 // Эфиры адьва агонь
 // Соли';
 // таьлица болотова'; плавнение* кипение* замерзание вес агрератное состояние
@@ -58,7 +96,7 @@ import "./App.css";
 export default function App() {
   return (
     <div>
-      <SoundPage />
+      <Mu11Da108May />
     </div>
   );
 }

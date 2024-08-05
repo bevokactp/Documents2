@@ -1,0 +1,12 @@
+aabb  парная
+abab  перекрестная
+abba  опоясывающая
+aba bcb cdc   цепная
+abba  объединенная
+ababcc   окружная
+aabb  внутренняя
+abab  в середине строки
+aabb  по первым буквам
+ababcdcdefefgg сонет
+aabba лимерика
+aaba  теренс

@@ -1,6 +1,5 @@
 // Расчет частот музыкальных нот.
 // Поддержка различных музыкальных систем (например, равномерно темперированный строй)
-// Работы с частотой 438 Гц и адаптацией частот.
 
 // FrequencyCalculator.js
 
@@ -17,12 +16,12 @@ export function calculateFrequency(baseFrequency, semitones) {
 }
 
 /**
- * Адаптация частоты к стандарту 438 Гц.
- * Формула: f = f * (438 / 440)
+ * Адаптация частоты к стандарту 432 Гц.
+ * Формула: f = f * (432 / 440)
  * где f - частота в стандартной настройке 440 Гц.
  * @param {number} frequency - частота (Гц).
  * @returns {number} - адаптированная частота (Гц).
  */
-export function adaptTo438Hz(frequency) {
-    return frequency * (438 / 440);
+export function adaptTo432Hz(frequency) {
+    return frequency * (432 / 440);
 }

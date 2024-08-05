@@ -1,36 +1,36 @@
 import React from 'react';
-import './CircleOfFifths.css'; // Импорт стилей для компонента
 
-const CircleOfFifths = ({ notes }) => {
+const CircleOfFifths = () => {
   const radius = 200; // Радиус круга
-  const centerX = 250; // X-координата центра круга
-  const centerY = 250; // Y-координата центра круга
-  const angle = 2 * Math.PI / notes.length; // Угол между нотами
+  const center = radius; // Центр круга
+  const notes = [
+    'C', 'G', 'D', 'A', 'E', 'B', 'F♯', 'D♭', 'A♭', 'E♭', 'B♭', 'F'
+  ];
+  const angleStep = (2 * Math.PI) / notes.length;
 
   return (
-    <div className="circle-container">
-      <svg width="500" height="500" viewBox="0 0 500 500">
-        <circle cx={centerX} cy={centerY} r={radius} fill="none" stroke="black" strokeWidth="2" />
-        {notes.map((note, index) => {
-          const x = centerX + radius * Math.cos(index * angle - Math.PI / 2);
-          const y = centerY + radius * Math.sin(index * angle - Math.PI / 2);
-          return (
-            <text
-              key={note}
-              x={x}
-              y={y}
-              textAnchor="middle"
-              alignmentBaseline="central"
-              fontSize="16"
-              fill="black"
-              transform={`translate(${x}, ${y})`}
-            >
-              {note}
-            </text>
-          );
-        })}
-      </svg>
-    </div>
+    <svg width={2 * radius} height={2 * radius} viewBox={`0 0 ${2 * radius} ${2 * radius}`} style={{ border: '1px solid #000' }}>
+      <circle cx={center} cy={center} r={radius} fill="#fff" stroke="#000" strokeWidth="2" />
+      {notes.map((note, index) => {
+        const angle = index * angleStep;
+        const x = center + radius * Math.cos(angle);
+        const y = center - radius * Math.sin(angle);
+        return (
+          <text
+            key={note}
+            x={x}
+            y={y}
+            textAnchor="middle"
+            alignmentBaseline="middle"
+            fontSize="16"
+            fill="#000"
+            transform={`rotate(${(index * 360) / notes.length}, ${x}, ${y})`}
+          >
+            {note}
+          </text>
+        );
+      })}
+    </svg>
   );
 };
 

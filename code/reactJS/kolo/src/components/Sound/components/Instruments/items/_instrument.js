@@ -1,5 +1,5 @@
 
-export const FREQUENCY_MAIN = 438;
+export const FREQUENCY_MAIN = 432;
 
 export default class Instrument {
 	constructor(name, width, height, length, materials, weight, colors) {

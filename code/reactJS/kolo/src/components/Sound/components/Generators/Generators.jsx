@@ -3,7 +3,7 @@ import { breakChordIntoNotes, createArpeggio } from './Arpeggiator';
 import { generateWhiteNoise, generatePinkNoise } from './Noise';
 import { createRhythmPattern } from './Rhythm';
 import { generateSineWave, generateSquareWave } from './Signal';
-import { generateTuning438Hz } from './Tuning';
+import { generateTuning432Hz } from './Tuning';
 import WaveformVisualizer from './Visualizer';
 
 
@@ -18,8 +18,8 @@ const Generators = () => {
   const [frequency, setFrequency] = useState(440); // Частота сигнала в Гц
   const [sampleRateWave, setsampleRateWave] = useState(10); // Частота дискретизации
   const [signalLengthWave, setSignalLengthWave] = useState(1000); // Длина сигнала в миллисекундах
-  const [sampleRate438, setSampleRate438] = useState(10); // Частота дискретизации
-  const [signalLength438, setSignalLength438] = useState(1000); // Длина сигнала в миллисекундах
+  const [sampleRate432, setSampleRate432] = useState(10); // Частота дискретизации
+  const [signalLength432, setSignalLength432] = useState(1000); // Длина сигнала в миллисекундах
 
   const notesFromChord = breakChordIntoNotes(chord);
   const arpeggio = createArpeggio(chord, arpeggioSpeed);
@@ -28,7 +28,7 @@ const Generators = () => {
   const rhythmPattern = createRhythmPattern(beatsPerMeasure, patternLength);
   const sineWave = generateSineWave(frequency, sampleRateWave, signalLengthWave);
   const rectancgeWave = generateSquareWave(frequency, sampleRateWave, signalLengthWave);
-  const tuning438Hz = generateTuning438Hz(sampleRate438, signalLength438);
+  const tuning432Hz = generateTuning432Hz(sampleRate432, signalLength432);
 
   return (
     <div>
@@ -75,12 +75,12 @@ const Generators = () => {
       </section>
 
       <section>
-        <p>генерирует звук с частотой 438 Гц. Частота дискретизации и длина сигнала задаются пользователем.</p>
-        <label> Частота дискретизации (Гц): <input type="number" value={sampleRate438} onChange={(e) => setSampleRate438(parseInt(e.target.value))} /> </label>
+        <p>генерирует звук с частотой 432 Гц. Частота дискретизации и длина сигнала задаются пользователем.</p>
+        <label> Частота дискретизации (Гц): <input type="number" value={sampleRate432} onChange={(e) => setSampleRate432(parseInt(e.target.value))} /> </label>
         <br />
-        <label> Длина сигнала (мс): <input type="number" value={signalLength438} onChange={(e) => setSignalLength438(parseInt(e.target.value))} /> </label>
+        <label> Длина сигнала (мс): <input type="number" value={signalLength432} onChange={(e) => setSignalLength432(parseInt(e.target.value))} /> </label>
         <br />
-        <p><span style={{ color: 'blue', fontWeight: 'bold', }}>настройка 438 Гц</span>: {tuning438Hz.map(value => value.toFixed(1)).join(', ')}</p>
+        <p><span style={{ color: 'blue', fontWeight: 'bold', }}>настройка 432 Гц</span>: {tuning432Hz.map(value => value.toFixed(1)).join(', ')}</p>
       </section>
 
     </div>
