@@ -2,20 +2,16 @@ import { Symbol, SymbolGroup} from './symbol';
 
 
 export class LetterSymbol extends Symbol {
-    constructor(name, outline, color, classification, description, isUppercase, group, sound) {
-        super(name, outline, color, classification, description);
+    constructor(key, name, color, description, group, drawFunction, isUppercase, sound = {}) {
+        super(key, name, color, description, group, drawFunction);
         this.isUppercase = isUppercase;
-        this.group = group;
         this.sound = sound;
-    }
-
-
-    draw(size) {
     }
 
     playSound() {
         this.sound.playSound();
     }
+
 }
 
 

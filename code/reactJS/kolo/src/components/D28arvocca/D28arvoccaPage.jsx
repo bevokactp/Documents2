@@ -1,9 +1,13 @@
 import React from 'react';
+import GramotaPage from './gramota/GramotaPage';
+import AlphabetPage from './alphabet/AlphabetPage';
+
 
 export default function D28arvoccaPage() {
   return (
     <div>
-      <h1>D28arvocca Page</h1>
+      {/* <GramotaPage /> */}
+      <AlphabetPage />
     </div>
   );
 };

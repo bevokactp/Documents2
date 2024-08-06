@@ -1,65 +1,95 @@
+import { LetterSymbol } from "./letter";
 
-export default class LetterSound {
-    constructor(amplitude, articulation, intonation, duration, resonance, timbre, frequency, inhaleExhale, classification) {
-        this.letter = null;
-        this.amplitude = amplitude;
-        this.articulation = articulation;
-        this.intonation = intonation;
-        this.duration = duration;
-        this.resonance = resonance;
-        this.timbre = timbre;
-        this.frequency = frequency;
-        this.inhaleExhale = inhaleExhale;
-        this.classification = classification; // Полная классификация
+export class Sound {
+    constructor({
+        amplitude,
+        articulation,
+        intonation,
+        duration,
+        resonance,
+        timbre,
+        frequency,
+        inhalationPronunciation,
+        classification, // VowelClassification or ConsonantClassification
+    }) {
+        this.letter = null; // Will be set later
+        this.amplitude = amplitude; // Amplitude of the sound
+        this.articulation = articulation; // Articulation of the sound
+        this.intonation = intonation; // Intonation of the sound
+        this.duration = duration; // Duration of the sound
+        this.resonance = resonance; // Resonance of the sound
+        this.timbre = timbre; // Timbre of the sound
+        this.frequency = frequency; // Frequency of the sound
+        this.inhalationPronunciation = inhalationPronunciation; // [Inhalation, Exhalation]
+        this.classification = classification; // Will be set based on type of sound
     }
 
     setLetter(letter) {
+        if (!(letter instanceof LetterSymbol)) {
+            throw new Error("letter must be Letter instance");
+        }
         this.letter = letter;
     }
 
     play() {
-        throw new Error("Method 'play()' must be implemented.");
+        throw new Error("Not implemented.");
     }
 
-    getClassification() {
-        return this.classification;
+    getTypeSound() {
+        if (!this.classification) {
+            throw new Error("Sound classification is not set.");
+        }
+        return this.classification instanceof VowelClassification ? 'Vowel' : 'Consonant';
+    }
+
+    getSoundInfo() {
+        return this.frequency;
+        return JSON.stringify({
+            amplitude: this.amplitude,
+            articulation: this.articulation,
+            intonation: this.intonation,
+            duration: this.duration,
+            resonance: this.resonance,
+            timbre: this.timbre,
+            frequency: this.frequency,
+            inhalationPronunciation: this.inhalationPronunciation,
+            classification: this.classification
+        }, null, 2); // Pretty-print the JSON
     }
 }
 
+export class VowelClassification {
+    constructor({
+        tenseness, // [Tense, Lax]
+        placeOfArticulation, // [Open, Mid, Closed]
+        height, // [High, Mid, Low]
+        length, // [Short, Long]
+        lipRoundness, // [Rounded, Unrounded]
+        nasality // [Nasal, Non-nasal]
+    }) {
+        this.tenseness = tenseness;
+        this.placeOfArticulation = placeOfArticulation;
+        this.height = height;
+        this.length = length;
+        this.lipRoundness = lipRoundness;
+        this.nasality = nasality;
+    }
+}
 
-export const classificationDetails = {
-    vowels: {
-        tension: ['tense', 'lax'],
-        formation: ['open', 'mid', 'close'],
-        height: ['high', 'mid', 'low'],
-        length: ['short', 'long'],
-        lipRoundness: ['rounded', 'unrounded'],
-        nasal: ['nasal', 'oral'],
-        is_tonal: false,
-    },
-    consonants: {
-        length: ['short', 'long'],
-        placeOfArticulation: {
-            teeth: ['upper', 'lower'],
-            is_alveolar: false,
-            lips: ['upper', 'lower'],
-            palate: ['soft', 'hard'],
-            is_throat: false,
-            tongue: {
-                large: ['back', 'middle', 'front'],
-                is_small: false,
-            }
-        },
-        voicing: ['voiced', 'voiceless'],
-        nasality: ['nasal', 'oral'],
-        mannerOfArticulation: ['occlusive', 'fricative', 'affricate', 'sonorant', 'softened'],
-        is_clicking: false,
-        is_retroflex: false,
-        is_pharyngeal: false,
-        is_laryngeal: false,
-        is_aspirated: false,
-        is_implosive: false,
-        is_ejective: false,
-    },
-    semiVowels: {},
-};
+export class ConsonantClassification {
+    constructor({
+        length, // [Short, Long]
+        placeOfArticulation, // Multiple selections
+        voicing, // [Voiced, Voiceless]
+        nasality, // [Nasal, Voiceless nasal]
+        mannerOfArticulation, // Multiple selections
+        specialType // Multiple selections
+    }) {
+        this.length = length;
+        this.placeOfArticulation = placeOfArticulation;
+        this.voicing = voicing;
+        this.nasality = nasality;
+        this.mannerOfArticulation = mannerOfArticulation;
+        this.specialType = specialType;
+    }
+}

@@ -1,97 +1,219 @@
 import { LetterSymbol, LetterGroup } from './letter';
+import { OperationSymbol, OperationSymbolGroup, OperationSymbolSubGroup } from './operation';
 import { PunctuationSymbol, PunctuationGroup } from './punctuation';
-import { Operation, OperationGroup } from './operation';
 import { GeometrySymbol, GeometryGroup } from './geometry';
 import { MusicSymbol, MusicGroup } from './music';
-import LetterSound from './sound';
-
+import { Sound } from './sound';
+import data from './alphabet.json';
 
 export default class Alphabet {
     constructor() {
-        this.groupsLettersSymbol = [];
-        this.groupsPunctuationSymbol = [];
-		this.groupsOperationsSymbol = [];
-		this.groupsGeometrySymbol = [];
-		this.groupsMusicSymbol = [];
+        this.groups = [];
+        this.subGroups = [];
+        this.symbols = [];
+        this.createGroups();
+        this.createGroupsAndSubGroupsOperations();
+        this.createSymbols();
     }
 
-    createLetter(name, outline, color, classification, description, isUppercase, groupName, soundAttributes) {
-        let group = this.groupsLettersSymbol.find(g => g.name === groupName);
-        if (!group) {
-            group = new LetterGroup(groupName, `Group for ${groupName}`);
-            this.groupsLettersSymbol.push(group);
-        }
-
-        const sound = new LetterSound(
-            soundAttributes.amplitude,
-            soundAttributes.articulation,
-            soundAttributes.intonation,
-            soundAttributes.duration,
-            soundAttributes.resonance,
-            soundAttributes.timbre,
-            soundAttributes.frequency,
-            soundAttributes.inhaleExhale,
-            soundAttributes.classificationDetails
-        );
-
-        const letter = new LetterSymbol(name, outline, color, classification, description, isUppercase, sound);
-        sound.setLetter(letter);
-
-        group.addLetter(letter);
-
-        return letter;
+    createGroups() {
+        this.createLetterGroups();
+        this.createPunctuationGroups();
+        this.createMusicGroups();
+        this.createGeometryGroups();
     }
 
-    createPunctuationSymbol(name, outline, color, value, groupName) {
-        let group = this.groupsPunctuationSymbol.find(g => g.name === groupName);
-        if (!group) {
-            group = new PunctuationGroup(groupName, `Group for ${groupName}`);
-            this.groupsPunctuationSymbol.push(group);
-        }
-
-        const punctuationSymbol = new PunctuationSymbol(name, outline, color, value, group);
-
-        group.addSymbol(punctuationSymbol);
-
-        return punctuationSymbol;
+    createSymbols() {
+        this.createLetterSymbols();
+        this.createOperationSymbols();
+        this.createPunctuationSymbols();
+        this.createGeometrySymbols();
+        this.createMusicSymbols();
     }
 
-	createOperation(name, outline, color, value, groupName) {
-        let group = this.groupsOperationsSymbol.find(g => g.name === groupName);
-        if (!group) {
-            group = new OperationGroup(groupName, `Group for ${groupName}`);
-            this.groupsOperationsSymbol.push(group);
-        }
-
-        const operation = new Operation(name, outline, color, value, group);
-        group.addOperation(operation);
-
-        return operation;
+    createLetterGroups() {
+        data.letters.groups.forEach(groupData => {
+            const group = new LetterGroup(groupData.keyGroup, groupData.name, groupData.description);
+            this.groups.push(group);
+        });
     }
 
-	createGeometrySymbol(name, outline, color, value, groupName) {
-        let group = this.groupsGeometrySymbol.find(g => g.name === groupName);
-        if (!group) {
-            group = new GeometryGroup(groupName, `Group for ${groupName}`);
-            this.groupsGeometrySymbol.push(group);
-        }
-
-        const geometrySymbol = new GeometrySymbol(name, outline, color, value, group);
-        group.addSymbol(geometrySymbol);
-
-        return geometrySymbol;
+    createPunctuationGroups() {
+        data.punctuation.groups.forEach(groupData => {
+            const group = new LetterGroup(groupData.keyGroup, groupData.name, groupData.description);
+            this.groups.push(group);
+        });
     }
 
-	createMusicSymbol(name, outline, color, value, groupName) {
-        let group = this.groupsMusicSymbol.find(g => g.name === groupName);
-        if (!group) {
-            group = new MusicGroup(groupName, `Group for ${groupName}`);
-            this.groupsMusicSymbol.push(group);
-        }
+    createGeometryGroups() {
+        data.geometry.groups.forEach(groupData => {
+            const group = new LetterGroup(groupData.keyGroup, groupData.name, groupData.description);
+            this.groups.push(group);
+        });
+    }
 
-        const musicSymbol = new MusicSymbol(name, outline, color, value, group);
-        group.addSymbol(musicSymbol);
+    createMusicGroups() {
+        data.music.groups.forEach(groupData => {
+            const group = new LetterGroup(groupData.keyGroup, groupData.name, groupData.description);
+            this.groups.push(group);
+        });
+    }
 
-        return musicSymbol;
+    createGroupsAndSubGroupsOperations() {
+        data.operations.groups.forEach(groupData => {
+            const group = new OperationSymbolGroup(groupData.keyGroup, groupData.name, groupData.description);
+            if (groupData.subGroups) {
+                groupData.subGroups.forEach(subGroupData => {
+                    const subGroup = new OperationSymbolSubGroup(subGroupData.keySubGroup, subGroupData.name, subGroupData.description);
+                    this.subGroups.push(subGroup);
+                });
+            }
+            this.groups.push(group);
+        });
+    }
+
+    createLetterSymbols() {
+        const letterData = data.letters.groups;
+        letterData.forEach(groupData => {
+            const group = this.groups.find(g => g.key === groupData.keyGroup);
+            const sound = this.createSoundForLetter();
+            groupData.symbols.forEach(symbolData => {
+                const letter = new LetterSymbol(
+                    symbolData.keySymbol,
+                    symbolData.name,
+                    symbolData.color,
+                    symbolData.description,
+                    group,
+                    this.createDrawFunction(symbolData.name), // Assuming a draw function is needed
+                    symbolData.name.toUpperCase() === symbolData.name, // Simple check for uppercase
+                    sound,
+                );
+                sound.setLetter(letter)
+                group.addSymbol(letter);
+                this.symbols.push(letter);
+            });
+        });
+    }
+
+    createOperationSymbols() {
+        data.operations.groups.forEach(groupData => {
+            if (groupData.subGroups) {
+                groupData.subGroups.forEach(subGroupData => {
+                    let subGroup = this.subGroups.find(g => g.key === groupData.subGroups.keySubGroup);
+                    // console.log(subGroup, groupData.subGroups.keySubGroup)
+                    subGroupData.symbols.forEach(symbolData => {
+                        const symbol = new OperationSymbol(
+                            symbolData.keySymbol,
+                            symbolData.name,
+                            symbolData.color,
+                            symbolData.description,
+                            subGroup,
+                            this.createDrawFunction(symbolData.name), // Assuming a draw function is needed
+                        );
+                        // subGroup.addSymbol(symbol);
+                        this.symbols.push(symbol);
+                    });
+                });
+            } else {
+                let group = this.groups.find(g => g.key === groupData.keyGroup);
+                groupData.symbols.forEach(symbolData => {
+                const symbol = new OperationSymbol(
+                    symbolData.keySymbol,
+                    symbolData.name,
+                    symbolData.color,
+                    symbolData.description,
+                    group,
+                    this.createDrawFunction(symbolData.name), // Assuming a draw function is needed
+                );
+                group.addSymbol(symbol);
+                this.symbols.push(symbol);
+            });
+            }
+        });
+    }
+
+    createPunctuationSymbols() {
+        const letterData = data.punctuation.groups;
+        letterData.forEach(groupData => {
+            const group = this.groups.find(g => g.key === groupData.keyGroup);
+            groupData.symbols.forEach(symbolData => {
+                const symbol = new PunctuationSymbol(
+                    symbolData.keySymbol,
+                    symbolData.name,
+                    symbolData.color,
+                    symbolData.description,
+                    group,
+                    this.createDrawFunction(symbolData.name), // Assuming a draw function is needed
+                    symbolData.name.toUpperCase() === symbolData.name, // Simple check for uppercase
+                    this.createSoundForLetter(symbolData.name) // Create sound if needed
+                );
+                group.addSymbol(symbol);
+                this.symbols.push(symbol);
+            });
+        });
+    }
+
+    createGeometrySymbols() {
+        const letterData = data.geometry.groups;
+        letterData.forEach(groupData => {
+            const group = this.groups.find(g => g.key === groupData.keyGroup);
+            groupData.symbols.forEach(symbolData => {
+                const symbol = new GeometrySymbol(
+                    symbolData.keySymbol,
+                    symbolData.name,
+                    symbolData.color,
+                    symbolData.description,
+                    group,
+                    this.createDrawFunction(symbolData.name), // Assuming a draw function is needed
+                    symbolData.name.toUpperCase() === symbolData.name, // Simple check for uppercase
+                    this.createSoundForLetter(symbolData.name) // Create sound if needed
+                );
+                group.addSymbol(symbol);
+                this.symbols.push(symbol);
+            });
+        });
+    }
+
+    createMusicSymbols() {
+        const letterData = data.music.groups;
+        letterData.forEach(groupData => {
+            const group = this.groups.find(g => g.key === groupData.keyGroup);
+            groupData.symbols.forEach(symbolData => {
+                const symbol = new MusicSymbol(
+                    symbolData.keySymbol,
+                    symbolData.name,
+                    symbolData.color,
+                    symbolData.description,
+                    group,
+                    this.createDrawFunction(symbolData.name), // Assuming a draw function is needed
+                    symbolData.name.toUpperCase() === symbolData.name, // Simple check for uppercase
+                    this.createSoundForLetter(symbolData.name) // Create sound if needed
+                );
+                group.addSymbol(symbol);
+                this.symbols.push(symbol);
+            });
+        });
+    }
+
+
+    createDrawFunction(name) {
+        // Need implement. Generate draw_function_name_for_each
+        return (size) => {
+            console.log(`Drawing ${name} with size ${size}`);
+        };
+    }
+
+    createSoundForLetter() {
+        return new Sound({
+            amplitude: 1,
+            articulation: 'none',
+            intonation: 'neutral',
+            duration: 'short',
+            resonance: 'none',
+            timbre: 'neutral',
+            frequency: 432,
+            inhalationPronunciation: 'Exhalation',
+            classification: {} // Provide appropriate classification
+        });
     }
 }
