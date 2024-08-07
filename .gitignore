@@ -42,6 +42,7 @@ site-packages/
 # Kivi-specific
 .build
 *.pyd
+.buildozer
 
 # React Native
 android/app/build

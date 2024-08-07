@@ -9,16 +9,26 @@ import React from "react";
 // import Mu11Da108May from "./components/Datetime/DatetimeConvert";
 
 // import Mu11Da108May from "./components/Kolo/Kolo";
+// colors converter explanation names numbers
+// дз 2  тз 3 дж 4
 
 // import Mu11Da108May from "./components/Names/Names";
 // import Mu11Da108May from "./components/Genealogy/Genealogy";
 // import Mu11Da108May from "./components/Mitpik/Mitpik";
+// рачажные меры и не рачажные
+//
 
 // import Mu11Da108May from "./components/Pasha/Pasha"; сад муж - триклитон
 
 // import Mu11Da108May from "./components/Metki/PlatonicMetki";
 // import Mu11Da108May from "./components/Metki/StarMetki";
 // import Mu11Da108May from "./components/Metki/Composition";
+// архимедова тела
+// отстояния между телами с паралеными плоскотями по 2д 3д очертанию фигур
+
+
+
+
 
 // import Mu11Da108May from './components/Xvam1domari9/Xvam1domari9';
 
@@ -26,7 +36,9 @@ import React from "react";
 
 // import Mu11Da108May from './components/Noe3i9/components/Noe3i9Page';
 // import Mu11Da108May from './components/N1cbmo/N1cbmoPage';
-import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
+// import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
+// 1 2 3 4 ... рефлексна система
+
 
 // функции что генерирую буквы
 // Буква 1: Один полукруг с горизонтальной линией по середине.
@@ -52,6 +64,8 @@ import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
 // імянаречение
 
 // Reincarnation простое=год+месяц стихії2богов 1 3 9 40 писанка лохань тризна разна Всенощная Рангжир рангфир рангхир Высчитали
+// группа крови 1+
+// с чем усобщим в какой одежде
 // посмертно
 // Имя по дате
 // Стихия по жизни
@@ -70,6 +84,9 @@ import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
 
 // Plants мотъ батискаф батисфера
 // терра прета
+// фиолетозём
+// цвет кроны плода листьев цветов
+// листорасположение
 
 // Перстень'; Поручи Ожерелье
 // веники
@@ -90,6 +107,7 @@ import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
 // ElectoMontage
 // Electronic
 // AutoElectric
+// астрономія у пи терра у ра н афродиты
 
 import "./App.css";
 
