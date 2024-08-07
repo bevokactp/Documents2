@@ -1,0 +1,39 @@
+<MediaPlayer>:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: '48dp'
+            Button:
+                text: 'Play'
+                on_press: root.play_media()
+            Button:
+                text: 'Pause'
+                on_press: root.pause_media()
+            Button:
+                text: 'Stop'
+                on_press: root.stop_media()
+            Button:
+                text: 'Shuffle'
+                on_press: root.shuffle_playlist()
+            Button:
+                text: 'Open Files'
+                on_press: root.open_files()
+            Button:
+                text: 'Open Directory'
+                on_press: root.open_directory_recursively()
+            Slider:
+                id: playtime_slider
+                min: 0
+                max: 100
+                value: 0
+            Slider:
+                id: volume_slider
+                min: 0
+                max: 100
+                value: 50
+        BoxLayout:
+            TreeView:
+                id: playlist_view
+                root_options: {'text': 'Playlist'}
+                hide_root: True
