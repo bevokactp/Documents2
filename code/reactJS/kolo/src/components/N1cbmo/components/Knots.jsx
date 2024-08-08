@@ -1,12 +1,13 @@
 import React from 'react';
 
 import Draw from '../draw/Knots';
+import hook from '../hooks/Knots';
 
-
-const Component = ({ parameters, handleChange }) => {
+const Component = () => {
+  const [parameters, handleChange] = hook();
   return (
       <div>
-        <h1>Knot Writing</h1>
+        <h3>Knot Writing</h3>
         {parameters.map((rope, index) => (
           <div key={index}>
             <label> Thickness: <input type="number" value={rope.thickness} onChange={(e) => handleChange(index, 'thickness', e.target.value)} /> </label>

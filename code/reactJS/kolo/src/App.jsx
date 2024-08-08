@@ -26,20 +26,14 @@ import React from "react";
 // архимедова тела
 // отстояния между телами с паралеными плоскотями по 2д 3д очертанию фигур
 
-
-
-
-
 // import Mu11Da108May from './components/Xvam1domari9/Xvam1domari9';
 
 // import Mu11Da108May from './components/Sound/components/SoundPage';
 
 // import Mu11Da108May from './components/Noe3i9/components/Noe3i9Page';
-// import Mu11Da108May from './components/N1cbmo/N1cbmoPage';
+
 // import Mu11Da108May from './components/D28arvocca/D28arvoccaPage';
 // 1 2 3 4 ... рефлексна система
-
-
 // функции что генерирую буквы
 // Буква 1: Один полукруг с горизонтальной линией по середине.
 // Буква 2: Пересечение двух одинаковых кругов на 1/4 диаметра.
@@ -54,10 +48,12 @@ import React from "react";
 // Буква 11: Пересечение двух линий под 90 с отступом 45.
 // Буква 12: Пересечение линии и круга.
 
+import Mu11Da108May from './components/N1cbmo/N1cbmoPage';
 
-// мандары
-// generateImageSymetry
-// арконтан
+// дары
+// Славитауия левитации
+// Правитауия гравитации
+
 
 // свадьба
 // рождения кварзна тризна
@@ -78,7 +74,7 @@ import React from "react";
 // Рангжир рангфир рангхир
 
 
-// строительство гаяметрія куд хата хутор
+// строительство куд хата хутор
 
 // Litos камни рельеф истоники жилы ово
 
